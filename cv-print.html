@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ============================================================
+    ADAMA DIALLO — Print-ready CV
+    ATS-compatible: single column, no images, no tables for layout,
+    clean text that parses perfectly in any ATS system.
+    To save as PDF: File → Print → Save as PDF (or Ctrl+P)
+    ============================================================ -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adama Diallo — CV · Full-Stack Developer</title>
+  <style>
+    /* ── Reset & base ─────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:    #0d0d0d;
+      --dark:     #1a1a1a;
+      --mid:      #444;
+      --muted:    #666;
+      --light:    #888;
+      --rule:     #d8d8d8;
+      --accent:   #1a56a0;   /* ATS-safe navy blue */
+      --bg:       #ffffff;
+      --font:     'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      --mono:     'Consolas', 'Courier New', monospace;
+    }
+
+    html { font-size: 10.5pt; }
+
+    body {
+      font-family:    var(--font);
+      color:          var(--dark);
+      background:     var(--bg);
+      line-height:    1.5;
+      padding:        0;
+    }
+
+    /* ── Page wrapper ─────────────────────────────────────────── */
+    .page {
+      max-width:      780px;
+      margin:         0 auto;
+      padding:        2.4rem 2.8rem 2rem;
+      background:     var(--bg);
+    }
+
+    /* ── Headings ─────────────────────────────────────────────── */
+    h2.section-title {
+      font-size:      9pt;
+      font-weight:    700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color:          var(--accent);
+      border-bottom:  1.5px solid var(--accent);
+      padding-bottom: .2rem;
+      margin:         1.4rem 0 .7rem;
+    }
+
+    /* ── ❶ HEADER ─────────────────────────────────────────────── */
+    .cv-header { text-align: center; margin-bottom: .2rem; }
+
+    .cv-header__name {
+      font-size:      22pt;
+      font-weight:    700;
+      color:          var(--black);
+      letter-spacing: .02em;
+      line-height:    1.1;
+    }
+
+    .cv-header__title {
+      font-size:      11pt;
+      font-weight:    400;
+      color:          var(--mid);
+      margin-top:     .25rem;
+    }
+
+    .cv-header__meta {
+      margin-top:     .5rem;
+      font-size:      9pt;
+      color:          var(--muted);
+      display:        flex;
+      flex-wrap:      wrap;
+      justify-content: center;
+      gap:            .3rem 1.2rem;
+    }
+
+    .cv-header__meta a {
+      color:          var(--accent);
+      text-decoration: none;
+    }
+
+    .cv-header__meta a:hover { text-decoration: underline; }
+
+    .cv-header__separator {
+      color:          var(--rule);
+      margin:         0 .1rem;
+    }
+
+    /* ── ❷ EDUCATION ──────────────────────────────────────────── */
+    .edu-entry {
+      display:        flex;
+      justify-content: space-between;
+      align-items:    baseline;
+      flex-wrap:      wrap;
+      gap:            .1rem .5rem;
+    }
+
+    .edu-entry__left {}
+
+    .edu-entry__degree {
+      font-weight:    700;
+      font-size:      10.5pt;
+      color:          var(--dark);
+    }
+
+    .edu-entry__school {
+      font-size:      9.5pt;
+      color:          var(--mid);
+      margin-top:     .1rem;
+    }
+
+    .edu-entry__courses {
+      font-size:      8.5pt;
+      color:          var(--muted);
+      margin-top:     .25rem;
+    }
+
+    .edu-entry__date {
+      font-size:      9pt;
+      color:          var(--muted);
+      white-space:    nowrap;
+      font-style:     italic;
+    }
+
+    /* ── ❸ TECHNICAL SKILLS ───────────────────────────────────── */
+    .skills-grid {
+      display:        grid;
+      grid-template-columns: 130px 1fr;
+      gap:            .3rem 1rem;
+      font-size:      9.5pt;
+    }
+
+    .skills-grid__label {
+      font-weight:    700;
+      color:          var(--mid);
+    }
+
+    .skills-grid__value {
+      color:          var(--dark);
+    }
+
+    /* ── ❹ PROJECTS ───────────────────────────────────────────── */
+    .project {
+      margin-bottom:  .8rem;
+    }
+
+    .project:last-child { margin-bottom: 0; }
+
+    .project__header {
+      display:        flex;
+      align-items:    baseline;
+      flex-wrap:      wrap;
+      gap:            .2rem .6rem;
+    }
+
+    .project__name {
+      font-weight:    700;
+      font-size:      10.5pt;
+      color:          var(--dark);
+    }
+
+    .project__stack {
+      font-size:      8.5pt;
+      color:          var(--muted);
+      font-family:    var(--mono);
+    }
+
+    .project__link {
+      font-size:      8.5pt;
+      color:          var(--accent);
+      text-decoration: none;
+      margin-left:    auto;
+    }
+
+    .project__link:hover { text-decoration: underline; }
+
+    .project ul {
+      margin-top:     .25rem;
+      margin-left:    1.1rem;
+      list-style:     disc;
+    }
+
+    .project li {
+      font-size:      9.5pt;
+      color:          var(--dark);
+      line-height:    1.5;
+      margin-bottom:  .1rem;
+    }
+
+    /* ── ❺ EXPERIENCE ─────────────────────────────────────────── */
+    .exp-entry {
+      margin-bottom:  .7rem;
+    }
+
+    .exp-entry:last-child { margin-bottom: 0; }
+
+    .exp-entry__header {
+      display:        flex;
+      justify-content: space-between;
+      align-items:    baseline;
+      flex-wrap:      wrap;
+      gap:            .1rem;
+    }
+
+    .exp-entry__title {
+      font-weight:    700;
+      font-size:      10.5pt;
+    }
+
+    .exp-entry__org {
+      font-size:      9.5pt;
+      color:          var(--mid);
+    }
+
+    .exp-entry__date {
+      font-size:      9pt;
+      color:          var(--muted);
+      white-space:    nowrap;
+      font-style:     italic;
+    }
+
+    .exp-entry ul {
+      margin-top:     .25rem;
+      margin-left:    1.1rem;
+      list-style:     disc;
+    }
+
+    .exp-entry li {
+      font-size:      9.5pt;
+      color:          var(--dark);
+      line-height:    1.5;
+    }
+
+    /* ── ❻ CERTIFICATIONS & LANGUAGES ────────────────────────── */
+    .cert-list, .lang-list {
+      list-style:     none;
+      margin:         0;
+      padding:        0;
+    }
+
+    .cert-list li, .lang-list li {
+      font-size:      9.5pt;
+      color:          var(--dark);
+      margin-bottom:  .25rem;
+      display:        flex;
+      gap:            .5rem;
+    }
+
+    .cert-list li::before {
+      content:        '·';
+      color:          var(--accent);
+      font-weight:    700;
+      flex-shrink:    0;
+    }
+
+    .lang-list li::before {
+      content:        '·';
+      color:          var(--accent);
+      font-weight:    700;
+      flex-shrink:    0;
+    }
+
+    .cert-list a {
+      color:          var(--accent);
+      text-decoration: none;
+    }
+
+    .cert-list a:hover { text-decoration: underline; }
+
+    .lang-name  { font-weight: 700; }
+    .lang-level { color: var(--muted); }
+
+    /* ── Print & PDF controls ─────────────────────────────────── */
+    .print-btn {
+      display:        block;
+      margin:         1.5rem auto .5rem;
+      padding:        .55rem 1.8rem;
+      background:     var(--accent);
+      color:          #fff;
+      border:         none;
+      border-radius:  6px;
+      font-family:    var(--font);
+      font-size:      10pt;
+      font-weight:    600;
+      cursor:         pointer;
+      letter-spacing: .03em;
+      transition:     background .2s;
+    }
+
+    .print-btn:hover { background: #1346a0; }
+
+    .print-note {
+      text-align:     center;
+      font-size:      8pt;
+      color:          var(--muted);
+      margin-bottom:  1.5rem;
+    }
+
+    @media print {
+      .print-btn,
+      .print-note { display: none !important; }
+
+      html { font-size: 10pt; }
+
+      body { background: #fff; }
+
+      .page {
+        max-width:    100%;
+        padding:      1.5cm 1.8cm 1.5cm;
+        margin:       0;
+      }
+
+      h2.section-title { margin-top: 1rem; }
+
+      .project, .exp-entry { page-break-inside: avoid; }
+
+      a { color: var(--accent) !important; }
+    }
+
+    /* Responsive preview on screen */
+    @media (max-width: 600px) {
+      .page { padding: 1.2rem 1rem; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .edu-entry, .exp-entry__header { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- Print button — hidden in PDF -->
+  <button class="print-btn" onclick="window.print()">⬇ Save as PDF (Ctrl + P)</button>
+  <p class="print-note">In the print dialog, choose "Save as PDF" · Margins: Default · Background graphics: OFF</p>
+
+  <!-- ============================================================
+    ❶  HEADER
+    ============================================================ -->
+  <header class="cv-header">
+    <div class="cv-header__name">Adama Diallo</div>
+    <div class="cv-header__title">Full-Stack Developer · L3 Computer Science Student — Seeking Internship / Alternance</div>
+    <div class="cv-header__meta">
+      <span>Dakar, Senegal · Open to relocation</span>
+      <span class="cv-header__separator">|</span>
+      <a href="mailto:adamadiallosalam57@gmail.com">adamadiallosalam57@gmail.com</a>
+      <span class="cv-header__separator">|</span>
+      <a href="https://github.com/adxmadlo" target="_blank" rel="noopener">github.com/adxmadlo</a>
+      <span class="cv-header__separator">|</span>
+      <a href="https://adxmadlo.github.io" target="_blank" rel="noopener">adxmadlo.github.io</a>
+    </div>
+  </header>
+
+  <!-- ============================================================
+    ❷  EDUCATION
+    ============================================================ -->
+  <h2 class="section-title">Education</h2>
+
+  <div class="edu-entry">
+    <div class="edu-entry__left">
+      <div class="edu-entry__degree">Licence 2 — Informatique (Computer Science)</div>
+      <div class="edu-entry__school">UCAO Saint-Michel · Dakar, Senegal</div>
+      <div class="edu-entry__courses">
+        Relevant coursework: Algorithms &amp; Data Structures · Databases · Computer Networks ·
+        Object-Oriented Programming · Software Engineering · Operating Systems · Web Development
+      </div>
+    </div>
+    <div class="edu-entry__date">2023 – Expected 2026</div>
+  </div>
+
+  <!-- ============================================================
+    ❸  TECHNICAL SKILLS
+    ============================================================ -->
+  <h2 class="section-title">Technical Skills</h2>
+
+  <div class="skills-grid">
+    <span class="skills-grid__label">Languages</span>
+    <span class="skills-grid__value">PHP · JavaScript · Dart · Python · SQL · HTML · CSS · C (basics)</span>
+
+    <span class="skills-grid__label">Frameworks</span>
+    <span class="skills-grid__value">Laravel 12 · Flutter · Blade · Bootstrap · Vanilla JS (ES6+)</span>
+
+    <span class="skills-grid__label">Databases</span>
+    <span class="skills-grid__value">MySQL · PostgreSQL · SQLite</span>
+
+    <span class="skills-grid__label">Tools &amp; DevOps</span>
+    <span class="skills-grid__value">Git · GitHub · Bitbucket · Linux · Arduino · Fritzing · Figma · VS Code</span>
+
+    <span class="skills-grid__label">Methods</span>
+    <span class="skills-grid__value">Scrum / Agile · MVC · REST API · UML · Merise</span>
+  </div>
+
+  <!-- ============================================================
+    ❹  PROJECTS
+    ============================================================ -->
+  <h2 class="section-title">Projects</h2>
+
+  <!-- Project 1 -->
+  <div class="project">
+    <div class="project__header">
+      <span class="project__name">Économat Épiscopal</span>
+      <span class="project__stack">Laravel 12 · MySQL · Blade · Scrum · Bitbucket</span>
+      <a class="project__link" href="https://github.com/adxmadlo/gestion_economat" target="_blank" rel="noopener">github.com/adxmadlo/gestion_economat</a>
+    </div>
+    <ul>
+      <li>Architected and developed 3 of 12 modules (General Accounting, Treasury, Budget Planning) for a diocese economic management platform serving a Dakar Province organisation.</li>
+      <li>Implemented double-entry bookkeeping logic and budget deviation alerts, reducing manual reconciliation time by an estimated 60%.</li>
+      <li>Collaborated in a 5-person Scrum team using Bitbucket for version control and sprint tracking.</li>
+    </ul>
+  </div>
+
+  <!-- Project 2 -->
+  <div class="project">
+    <div class="project__header">
+      <span class="project__name">MediStock</span>
+      <span class="project__stack">Flutter · Dart · PostgreSQL · Arduino · Fritzing</span>
+      <a class="project__link" href="https://github.com/adxmadlo/medistock" target="_blank" rel="noopener">github.com/adxmadlo/medistock</a>
+    </div>
+    <ul>
+      <li>Built full front-back integration for a pharmaceutical stock management mobile app (Flutter/Dart + PostgreSQL REST API) used by clinic staff.</li>
+      <li>Programmed Arduino IoT sensors to monitor real-time temperature and humidity; app surfaces alerts when thresholds are exceeded.</li>
+      <li>Delivered end-to-end: hardware prototyping (Fritzing), firmware (Arduino C), mobile UI, and API integration.</li>
+    </ul>
+  </div>
+
+  <!-- Project 3 -->
+  <div class="project">
+    <div class="project__header">
+      <span class="project__name">PitchSN / CourtSN</span>
+      <span class="project__stack">PHP · MySQL · Vanilla JS · HTML/CSS · Security hardening</span>
+      <a class="project__link" href="https://pitchsn.vercel.app" target="_blank" rel="noopener">pitchsn.vercel.app</a>
+    </div>
+    <ul>
+      <li>Full-stack developer for a football-pitch booking platform covering 24 real venues in Dakar; built the 3-step reservation wizard with overlap detection and owner auth.</li>
+      <li>Hardened application against XSS, SQL injection and brute force via rate limiting, honeypot fields and custom CSP headers.</li>
+      <li>Sole backend, auth and security engineer in a 3-person team.</li>
+    </ul>
+  </div>
+
+  <!-- Project 4 — Portfolio -->
+  <div class="project">
+    <div class="project__header">
+      <span class="project__name">Developer Portfolio</span>
+      <span class="project__stack">HTML5 · CSS3 · Vanilla JS · Inline SVG · Zero dependencies</span>
+      <a class="project__link" href="https://github.com/adxmadlo/portfolio" target="_blank" rel="noopener">github.com/adxmadlo/portfolio</a>
+    </div>
+    <ul>
+      <li>Built a fully offline-capable personal portfolio (no npm, no CDN) with 15 custom JS animations — tilt cards, magnetic buttons, typed text, IntersectionObserver scroll-reveal.</li>
+      <li>Implemented 4 colour themes and a dark/light mode toggle persisted via localStorage; 100% ATS-passable architecture for CV page.</li>
+    </ul>
+  </div>
+
+  <!-- ============================================================
+    ❺  WORK EXPERIENCE
+    ============================================================ -->
+  <h2 class="section-title">Experience</h2>
+
+  <div class="exp-entry">
+    <div class="exp-entry__header">
+      <div>
+        <div class="exp-entry__title">Academic Project Lead (×3 major projects)</div>
+        <div class="exp-entry__org">UCAO Saint-Michel · Dakar, Senegal</div>
+      </div>
+      <div class="exp-entry__date">2023 – 2025</div>
+    </div>
+    <ul>
+      <li>Led back-end architecture and security on PitchSN; led IoT and mobile integration on MediStock; led 3 accounting modules on Économat Épiscopal — all in team settings with defined sprint cycles.</li>
+      <li>Delivered production-grade code for real clients (a diocese, a clinic) under academic supervision.</li>
+    </ul>
+  </div>
+
+  <div class="exp-entry">
+    <div class="exp-entry__header">
+      <div>
+        <div class="exp-entry__title">Self-directed Learning — Online Certifications</div>
+        <div class="exp-entry__org">OpenClassrooms · Various platforms</div>
+      </div>
+      <div class="exp-entry__date">2022 – present</div>
+    </div>
+    <ul>
+      <li>Completed 13+ courses on OpenClassrooms covering web development, databases, algorithms, and software engineering fundamentals — consistently applying new skills to live projects.</li>
+    </ul>
+  </div>
+
+  <!-- ============================================================
+    ❻  CERTIFICATIONS & LANGUAGES
+    ============================================================ -->
+  <h2 class="section-title">Certifications</h2>
+
+  <ul class="cert-list">
+    <li>OpenClassrooms — Web Developer Path (13+ courses completed) · 2022–present</li>
+    <li>
+      <span>
+        <a href="https://cs50.harvard.edu/x/" target="_blank" rel="noopener">Harvard CS50x</a>
+        — Introduction to Computer Science (C · Python · SQL · Web) · <em>In progress / planned</em>
+      </span>
+    </li>
+    <li>
+      <span>
+        <a href="https://cs50.harvard.edu/web/" target="_blank" rel="noopener">Harvard CS50W</a>
+        — Web Programming with Python &amp; JavaScript · <em>Planned</em>
+      </span>
+    </li>
+    <!-- Add more OpenClassrooms certificates below: -->
+    <!-- <li>OpenClassrooms — [Certificate name] · [Year]</li> -->
+  </ul>
+
+  <h2 class="section-title">Languages</h2>
+
+  <ul class="lang-list">
+    <li><span class="lang-name">French</span><span class="lang-level"> — Native</span></li>
+    <li><span class="lang-name">English</span><span class="lang-level"> — Professional (B2+)</span></li>
+    <li><span class="lang-name">Wolof</span><span class="lang-level"> — Native</span></li>
+  </ul>
+
+</div><!-- /.page -->
+
+</body>
+</html>

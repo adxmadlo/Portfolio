@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="midnight" data-mode="dark">
+<head>
+  <!-- ============================================================
+    ADAMA DIALLO — Personal Portfolio v7
+    100% offline-capable. No CDN. No npm. Double-click to open.
+    v7: midnight-only palette, compact editorial contact form,
+    GeoPresence 4th project card, future-proof auto-fill grid.
+    ============================================================ -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Adama Diallo — L3 Computer Science Student & Full-Stack Developer in Dakar, Senegal. PHP · Laravel · Flutter · IoT.">
+  <meta name="theme-color" content="#0a0f1e">
+  <title>Adama Diallo — Developer</title>
+
+  <!-- Local stylesheet (no CDN) -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <!-- Keyboard skip link for accessibility -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ============================================================
+    HEADER / NAVIGATION
+    Fixed top bar with frosted glass effect.
+    Mobile: burger → slide-down menu.
+    Desktop: horizontal links.
+    ============================================================ -->
+  <header class="header" id="header">
+    <div class="header__inner container">
+
+      <!-- Left group: logo + light/dark toggle -->
+      <div class="header__brand">
+        <!-- Logo -->
+        <a class="header__logo" href="#hero" aria-label="Adama Diallo – back to top">
+          <span class="header__logo-tag" aria-hidden="true">&lt;/&gt;</span>
+          <span class="header__logo-name">Adama<span class="header__logo-dot">.</span></span>
+        </a>
+        <span class="header__divider" aria-hidden="true"></span>
+        <!-- Light / dark mode toggle -->
+        <button class="mode-toggle" id="modeToggle" type="button"
+                aria-label="Switch to light mode" title="Toggle light/dark mode">
+          <!-- Sun icon (shown in dark mode) -->
+          <svg class="mode-toggle__icon mode-toggle__icon--sun" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          <!-- Moon icon (shown in light mode) -->
+          <svg class="mode-toggle__icon mode-toggle__icon--moon" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Nav links -->
+      <nav class="nav" id="navMenu" aria-label="Primary navigation">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="#about">About</a></li>
+          <li><a class="nav__link" href="#skills">Skills</a></li>
+          <li><a class="nav__link" href="#projects">Projects</a></li>
+          <li><a class="nav__link" href="#experience">Experience</a></li>
+          <li><a class="nav__link nav__link--cta" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Burger (mobile only) -->
+      <div class="header__controls">
+        <button class="burger" id="burgerBtn" type="button"
+                aria-label="Open navigation" aria-expanded="false" aria-controls="navMenu">
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============================================================
+      01 · HERO
+    ============================================================ -->
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <!-- Animated dot-grid background (CSS only) -->
+      <div class="hero__grid" aria-hidden="true"></div>
+
+      <div class="hero__inner container">
+
+        <!-- Left: text content -->
+        <div class="hero__text" data-reveal>
+
+          <!-- Status pill -->
+          <p class="hero__status">
+            <span class="hero__status-dot" aria-hidden="true"></span>
+            Dakar, Senegal &nbsp;·&nbsp; Open to opportunities
+          </p>
+
+          <!-- Title — uses Creme Espana for "Adama" only -->
+          <h1 class="hero__title" id="hero-title">
+            <span class="hero__title-hi">Hi, I'm</span>
+            <span class="hero__title-name">Adama Diallo</span>
+          </h1>
+
+          <p class="hero__subtitle">
+            I'm <span class="typed-text" id="typedText">a Full-Stack Developer</span><span class="typed-cursor" aria-hidden="true"></span>
+          </p>
+
+          <p class="hero__desc">
+            Building web apps, mobile tools, and IoT systems —
+            grounded in real use-cases from Dakar.
+          </p>
+
+          <!-- CTA buttons -->
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#projects">
+              View My Projects
+              <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+                <path d="M5 12h14M13 6l6 6-6 6"/>
+              </svg>
+            </a>
+            <a class="btn btn--ghost" href="#contact">Contact Me</a>
+          </div>
+
+          <!-- Glassmorphism status card -->
+          <div class="hero__card" aria-label="Currently building">
+            <span class="hero__card-icon" aria-hidden="true">⚡</span>
+            <div class="hero__card-text">
+              <strong>Currently building</strong>
+              <span>Économat Épiscopal · Laravel 12</span>
+            </div>
+          </div>
+
+          <!-- Mono stack label -->
+          <p class="hero__stack" aria-label="Tech stack">
+            <span class="hero__stack-key">stack</span>
+            <span class="hero__stack-eq">=</span>
+            <span class="hero__stack-val">"PHP · Laravel · Flutter · PostgreSQL · JS"</span>
+          </p>
+
+        </div>
+
+        <!-- Right: portrait (drop assets/images/adama-portrait.jpg in place) -->
+        <!-- Falls back to the illustration until the photo exists -->
+        <div class="hero__visual" id="heroVisual" data-reveal>
+          <figure class="hero__portrait">
+            <img class="hero__portrait-img" id="heroPortraitImg"
+                 data-src="assets/images/adama-portrait.jpg"
+                 alt="Portrait of Adama Diallo" width="520" height="650">
+            <figcaption class="hero__portrait-tag">
+              <span class="hero__portrait-dot" aria-hidden="true"></span>
+              Dakar · Developer · Builder
+            </figcaption>
+          </figure>
+          <div class="hero__illus">
+            <img src="assets/images/hero-dark.png"
+                 alt="Developer illustration"
+                 class="hero__visual-img hero__visual-img--dark"
+                 width="600" height="645" loading="eager">
+            <img src="assets/images/hero-light.png"
+                 alt=""
+                 aria-hidden="true"
+                 class="hero__visual-img hero__visual-img--light"
+                 width="600" height="675" loading="eager">
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="hero__scroll" aria-hidden="true">
+        <img src="assets/images/scroll-arrow.svg" alt="" width="40" height="60">
+      </div>
+
+    </section>
+
+    <!-- ============================================================
+      02 · ABOUT
+    ============================================================ -->
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div class="container">
+
+        <!-- Section header -->
+        <header class="section-head" data-reveal>
+          <span class="section-head__eyebrow">01 · About</span>
+          <h2 class="section-head__title" id="about-title">
+            A developer who likes to build.
+          </h2>
+        </header>
+
+        <div class="about__grid">
+
+          <!-- Photo -->
+          <div class="about__photo-wrap" data-reveal>
+            <!-- Uses assets/images/adama-portrait.jpg, falls back to avatar.svg -->
+            <img class="about__photo"
+                 src="assets/images/adama-portrait.jpg"
+                 alt="Adama Diallo"
+                 width="280" height="340"
+                 onerror="this.onerror=null;this.src='assets/images/avatar.svg'">
+            <!-- Floating available badge -->
+            <div class="about__badge" aria-label="Open to opportunities">
+              <span class="about__badge-dot" aria-hidden="true"></span>
+              Available for work
+            </div>
+            <span class="about__caption">Student · Developer · Builder</span>
+          </div>
+
+          <!-- Text -->
+  <!-- Text -->
+            <div class="about__content" data-reveal>
+              <p class="about__lead">
+                I'm a Computer Science student at
+                <strong>UCAO Saint-Michel</strong> in Dakar, Senegal —
+                interested in full-stack development, mobile apps, and connected systems.
+              </p>
+              <p class="about__text">
+                My projects are built around real use-cases: managing
+                a diocesan institution's finances, monitoring clinic stock with IoT sensors,
+                and making sports-pitch reservations easier for Dakar residents.
+                I enjoy collaborative team work, clean architecture, and turning complex
+                requirements into software that can actually be used.
+              </p>
+  
+              <!-- Quick facts -->
+              <dl class="about__facts">
+                <div class="about__fact">
+                  <dt>Education</dt>
+                  <dd>Licence Informatique · UCAO Saint-Michel</dd>
+                </div>
+                <div class="about__fact">
+                  <dt>Languages</dt>
+                  <dd>French · English · Spanish</dd>
+                </div>
+                <div class="about__fact">
+                  <dt>Based in</dt>
+                  <dd>Dakar, Senegal</dd>
+                </div>
+                <div class="about__fact">
+                  <dt>Email</dt>
+                  <dd><a href="mailto:adamadiallosalam57@gmail.com">adamadiallosalam57@gmail.com</a></dd>
+                </div>
+              </dl>
+  
+              <a class="btn btn--ghost about__cv" href="cv-print.html" target="_blank" rel="noopener">
+                <!-- Inline SVG download icon -->
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                     aria-hidden="true">
+                  <path d="M12 4v12M7 11l5 5 5-5M5 20h14"/>
+                </svg>
+                View CV (Print → PDF)
+              </a>
+            </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+      03 · SKILLS
+    ============================================================ -->
+    <!-- ── Animated Stats (counter animation on scroll) ── -->
+    <div class="container" style="padding-block: var(--s4);">
+      <div class="stats-grid" data-reveal>
+        <div class="stat-item">
+          <span class="stat-item__number" data-count="4" data-suffix="+" aria-label="4+ real projects">0</span>
+          <span class="stat-item__label">Real Projects</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-item__number" data-count="12" data-suffix="" aria-label="12 modules built">0</span>
+          <span class="stat-item__label">Modules Built</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-item__number" data-count="5" data-suffix="" aria-label="5 teammates">0</span>
+          <span class="stat-item__label">Team Members</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-item__number" data-count="9" data-suffix="" aria-label="9 technologies">0</span>
+          <span class="stat-item__label">Technologies</span>
+        </div>
+      </div>
+    </div>
+
+    <section class="section skills" id="skills" aria-labelledby="skills-title">
+      <div class="container">
+
+        <header class="section-head" data-reveal>
+          <span class="section-head__eyebrow">02 · Skills</span>
+          <h2 class="section-head__title" id="skills-title">
+            Tools I use to solve problems.
+          </h2>
+        </header>
+
+        <div class="skills__grid" data-stagger>
+
+          <!-- Each skill-card: icon (inline SVG) + title + desc + level badge -->
+
+          <article class="skill-card" data-reveal>
+            <div class="skill-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+                <path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/>
+              </svg>
+            </div>
+            <h3 class="skill-card__title">PHP / Laravel</h3>
+            <p class="skill-card__desc">MVC architecture, REST APIs, Blade, Eloquent, Scrum team workflows.</p>
+            <span class="skill-card__badge skill-card__badge--accent">Core</span>
+          </article>
+
+          <article class="skill-card" data-reveal>
+            <div class="skill-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+                <rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>
+              </svg>
+            </div>
+            <h3 class="skill-card__title">Flutter / Dart</h3>
+            <p class="skill-card__desc">Cross-platform mobile UI, front-back integration, API-ready architecture.</p>
+            <span class="skill-card__badge skill-card__badge--accent">Core</span>
+          </article>
+
+          <article class="skill-card" data-reveal>
+            <div class="skill-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+                <ellipse cx="12" cy="5" rx="9" ry="3"/>
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+              </svg>
+            </div>
+            <h3 class="skill-card__title">MySQL / PostgreSQL</h3>
+            <p class="skill-card__desc">Relational design, complex queries, migrations, data integrity.</p>
+            <span class="skill-card__badge skill-card__badge--accent">Core</span>
+          </article>
+
+          <article class="skill-card" data-reveal>
+            <div class="skill-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+                <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+              </svg>
+            </div>
+            <h3 class="skill-card__title">HTML / CSS / JS</h3>
+            <p class="skill-card__desc">Semantic markup, responsive CSS, vanilla JavaScript, BEM convention.</p>
+            <span class="skill-card__badge skill-card__badge--accent">Core</span>
+          </article>
+
+          <article class="skill-card" data-reveal>
+            <div class="skill-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+              </svg>
+            </div>
+            <h3 class="skill-card__title">Git / Bitbucket</h3>
+            <p class="skill-card__desc">Version control, feature branches, pull requests, Scrum collaboration.</p>
+            <span class="skill-card__badge skill-card__badge--accent2">Workflow</span>
+          </article>
+
+          <!-- IoT card with animated SVG badge -->
+          <article class="skill-card skill-card--iot" data-reveal>
+            <div class="skill-card__icon skill-card__icon--iot">
+              <img src="assets/images/iot-anim.svg" alt="" width="44" height="44" aria-hidden="true">
+            </div>
+            <h3 class="skill-card__title">Arduino / IoT</h3>
+            <p class="skill-card__desc">Sensor integration, environmental monitoring, hardware-software prototyping.</p>
+            <span class="skill-card__badge skill-card__badge--accent2">Project</span>
+          </article>
+
+          <article class="skill-card" data-reveal>
+            <div class="skill-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="8"/>
+                <path d="M12 4v16M4 12h16"/>
+              </svg>
+            </div>
+            <h3 class="skill-card__title">UML / System Design</h3>
+            <p class="skill-card__desc">Use-case diagrams, sequence diagrams, class diagrams, requirements analysis.</p>
+            <span class="skill-card__badge">Academic</span>
+          </article>
+
+          <article class="skill-card" data-reveal>
+            <div class="skill-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+                <path d="M4 18h16M6 15l3-3 3 2 5-6"/><path d="M17 8h3v3"/>
+              </svg>
+            </div>
+            <h3 class="skill-card__title">Networking / Linux</h3>
+            <p class="skill-card__desc">Networking fundamentals, Packet Tracer, Linux dev environment.</p>
+            <span class="skill-card__badge">Learning</span>
+          </article>
+
+          <article class="skill-card" data-reveal>
+            <div class="skill-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <h3 class="skill-card__title">Java / Python</h3>
+            <p class="skill-card__desc">OOP fundamentals, scripting, data structures and algorithm exercises.</p>
+            <span class="skill-card__badge">Learning</span>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+      04 · PROJECTS
+    ============================================================ -->
+    <section class="section projects" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+
+        <header class="section-head" data-reveal>
+          <span class="section-head__eyebrow">03 · Projects</span>
+          <h2 class="section-head__title" id="projects-title">
+            Things I've actually built.
+          </h2>
+          <p class="section-head__desc">
+            Collaborative academic and real-client projects across web, mobile, and IoT.
+          </p>
+        </header>
+
+        <!-- Filter bar -->
+        <div class="filter-bar" data-reveal role="group" aria-label="Filter projects by category">
+          <button class="filter-btn filter-btn--active" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter-btn" type="button" data-filter="web"    aria-pressed="false">Web</button>
+          <button class="filter-btn" type="button" data-filter="mobile" aria-pressed="false">Mobile</button>
+          <button class="filter-btn" type="button" data-filter="iot"    aria-pressed="false">IoT</button>
+        </div>
+
+        <!-- Cards -->
+        <div class="projects__grid" id="projectsGrid" data-stagger>
+
+          <!-- ── PROJECT 1: Économat ── -->
+          <article class="project-card" data-category="web" data-reveal>
+            <div class="project-card__top">
+              <div class="project-card__icon-wrap">
+                <!-- Folder SVG icon -->
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+                  <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
+                </svg>
+              </div>
+              <span class="project-card__status project-card__status--active">Active development</span>
+            </div>
+
+            <div class="project-card__body">
+              <p class="project-card__type">Web · Client project</p>
+              <h3 class="project-card__title">Économat Épiscopal</h3>
+              <p class="project-card__slug">gestion_economat</p>
+              <p class="project-card__desc">
+                A 12-module collaborative platform for a Dakar Province diocese —
+                covering accounting, cash flow, payroll, asset management, document
+                archival (GED/OCR) and budget tracking.
+              </p>
+
+              <div class="project-card__role">
+                <span class="project-card__role-label">My role</span>
+                <p class="project-card__role-value">
+                  Comptabilité générale · Gestion de la caisse · Budget prévisionnel
+                </p>
+              </div>
+
+              <p class="project-card__team">
+                Team of 5 — Adama · Sidaty · Gloria · Seynabou · Abdourahmane
+              </p>
+
+              <ul class="project-card__tags" aria-label="Technologies used">
+                <li class="tag tag--accent">Laravel 12</li>
+                <li class="tag">MySQL</li>
+                <li class="tag">Blade</li>
+                <li class="tag tag--accent2">Scrum</li>
+                <li class="tag">Bitbucket</li>
+              </ul>
+            </div>
+
+            <div class="project-card__footer">
+              <span class="project-card__meta">Mémoire axis: Patrimoine / GED / OCR</span>
+              <div class="project-card__links">
+                <a class="project-card__link" href="https://github.com/adxmadlo/gestion_economat"
+                   target="_blank" rel="noopener noreferrer"
+                   aria-label="GitHub — Économat Épiscopal">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="14" height="14"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                  Code
+                </a>
+                <!-- Live demo: uncomment and fill href when deployed -->
+                <!-- <a class="project-card__link project-card__link--demo" href="#"
+                   target="_blank" rel="noopener noreferrer"
+                   aria-label="Live demo — Économat Épiscopal">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" width="14" height="14"><path d="M7 17L17 7M9 7h8v8"/></svg>
+                  Demo
+                </a> -->
+              </div>
+            </div>
+          </article>
+
+          <!-- ── PROJECT 2: MediStock ── -->
+          <article class="project-card" data-category="mobile iot" data-reveal>
+            <div class="project-card__top">
+              <div class="project-card__icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+                  <rect x="7" y="3" width="10" height="18" rx="2"/>
+                  <path d="M10 6h4M10 18h4M4 10h3m10 0h3"/>
+                </svg>
+              </div>
+              <span class="project-card__status project-card__status--done">Academic delivery</span>
+            </div>
+
+            <!-- IoT animation badge -->
+            <div class="project-card__iot-badge" aria-hidden="true">
+              <img src="assets/images/iot-anim.svg" alt="" width="60" height="60">
+            </div>
+
+            <div class="project-card__body">
+              <p class="project-card__type">Mobile · IoT</p>
+              <h3 class="project-card__title">MediStock</h3>
+              <p class="project-card__slug">pharmaceutical stock + monitoring</p>
+              <p class="project-card__desc">
+                Clinic pharmaceutical stock and environmental monitoring system —
+                Flutter mobile app connected to Arduino IoT sensors for real-time
+                temperature and humidity alerts and inventory tracking.
+              </p>
+
+              <div class="project-card__role">
+                <span class="project-card__role-label">My role</span>
+                <p class="project-card__role-value">
+                  Front-back integration (with Sidaty) · Arduino code (with Ghost)
+                </p>
+              </div>
+
+              <p class="project-card__team">
+                Team of 5 — Adama · Sidaty · Gloria · Ghost · Seynabou
+              </p>
+
+              <ul class="project-card__tags" aria-label="Technologies used">
+                <li class="tag tag--accent">Flutter</li>
+                <li class="tag tag--accent">Dart</li>
+                <li class="tag">PostgreSQL</li>
+                <li class="tag tag--accent2">Arduino</li>
+                <li class="tag">Fritzing</li>
+              </ul>
+            </div>
+
+            <div class="project-card__footer">
+              <span class="project-card__meta">Mock data · API-ready refactor in progress</span>
+              <div class="project-card__links">
+                <a class="project-card__link" href="https://github.com/adxmadlo/medistock"
+                   target="_blank" rel="noopener noreferrer"
+                   aria-label="GitHub — MediStock">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="14" height="14"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                  Code
+                </a>
+                <!-- Live demo: uncomment and fill href when deployed -->
+                <!-- <a class="project-card__link project-card__link--demo" href="#"
+                   target="_blank" rel="noopener noreferrer"
+                   aria-label="Live demo — MediStock">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" width="14" height="14"><path d="M7 17L17 7M9 7h8v8"/></svg>
+                  Demo
+                </a> -->
+              </div>
+            </div>
+          </article>
+
+          <!-- ── PROJECT 3: PitchSN ── -->
+          <article class="project-card" data-category="web" data-reveal>
+            <div class="project-card__top">
+              <div class="project-card__icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+                  <path d="M4 6h16v12H4zM8 10h8M8 14h5"/>
+                  <path d="M7 19v2m10-2v2"/>
+                </svg>
+              </div>
+              <span class="project-card__status project-card__status--complete">Complete</span>
+            </div>
+
+            <div class="project-card__body">
+              <p class="project-card__type">Web Platform</p>
+              <h3 class="project-card__title">PitchSN / CourtSN</h3>
+              <p class="project-card__slug">sports reservation platform · Dakar</p>
+              <p class="project-card__desc">
+                Football-pitch reservation for Dakar with 24 real venues, 3-step
+                booking wizard, overlap detection, proprietaire authentication,
+                and a companion basketball section. Hardened against XSS, rate-limiting,
+                honeypot, and CSP headers.
+              </p>
+
+              <div class="project-card__role">
+                <span class="project-card__role-label">My role</span>
+                <p class="project-card__role-value">
+                  Full-stack · Backend logic · Auth · Security hardening
+                </p>
+              </div>
+
+              <p class="project-card__team">
+                Team of 3 — Adama · Mario · Moustapha
+              </p>
+
+              <ul class="project-card__tags" aria-label="Technologies used">
+                <li class="tag tag--accent">PHP</li>
+                <li class="tag">MySQL</li>
+                <li class="tag">Vanilla JS</li>
+                <li class="tag">HTML/CSS</li>
+                <li class="tag tag--accent2">Security</li>
+              </ul>
+            </div>
+
+            <div class="project-card__footer">
+              <span class="project-card__meta">XSS · Rate limiting · Honeypot · CSP</span>
+              <div class="project-card__links">
+                <a class="project-card__link" href="https://github.com/adxmadlo/pitchsn"
+                   target="_blank" rel="noopener noreferrer"
+                   aria-label="GitHub — PitchSN">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="14" height="14"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                  Code
+                </a>
+                <a class="project-card__link project-card__link--demo" href="https://pitchsn.vercel.app"
+                   target="_blank" rel="noopener noreferrer"
+                   aria-label="Live demo — PitchSN">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" width="14" height="14"><path d="M7 17L17 7M9 7h8v8"/></svg>
+                  Demo
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ── PROJECT 4: GeoPresence ── -->
+          <article class="project-card" data-category="web" data-reveal>
+            <div class="project-card__top">
+              <div class="project-card__icon-wrap">
+                <!-- Pin / location SVG icon -->
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+                  <path d="M12 2a7 7 0 0 1 7 7c0 5.25-7 13-7 13S5 14.25 5 9a7 7 0 0 1 7-7z"/>
+                  <circle cx="12" cy="9" r="2.5"/>
+                </svg>
+              </div>
+              <span class="project-card__status project-card__status--active">In development</span>
+            </div>
+
+            <div class="project-card__body">
+              <p class="project-card__type">Web · Attendance System</p>
+              <h3 class="project-card__title">GeoPresence</h3>
+              <p class="project-card__slug">location-based attendance</p>
+              <p class="project-card__desc">
+                Classroom attendance system using the browser Geolocation API —
+                students check in only when physically inside a geofenced zone.
+                Admin dashboard for session management, attendance reports,
+                and export to PDF/Excel.
+              </p>
+
+              <div class="project-card__role">
+                <span class="project-card__role-label">My role</span>
+                <p class="project-card__role-value">
+                  Full-stack · Geofence logic · REST API · Dashboard UI
+                </p>
+              </div>
+
+              <ul class="project-card__tags" aria-label="Technologies used">
+                <li class="tag tag--accent">PHP</li>
+                <li class="tag">MySQL</li>
+                <li class="tag">Vanilla JS</li>
+                <li class="tag tag--accent2">Geolocation API</li>
+                <li class="tag">HTML/CSS</li>
+              </ul>
+            </div>
+
+            <div class="project-card__footer">
+              <span class="project-card__meta">Geofence · Check-in validation · PDF export</span>
+              <div class="project-card__links">
+                <a class="project-card__link" href="https://github.com/adxmadlo/geopresence"
+                   target="_blank" rel="noopener noreferrer"
+                   aria-label="GitHub — GeoPresence">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="14" height="14"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                  Code
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div><!-- /projects__grid -->
+
+        <p class="projects__note" data-reveal>
+          Économat Épiscopal and MediStock repos are private during academic delivery —
+          links will go live once the final submission is approved.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+      05 · EXPERIENCE TIMELINE
+    ============================================================ -->
+    <section class="section experience" id="experience" aria-labelledby="exp-title">
+      <div class="container">
+
+        <header class="section-head" data-reveal>
+          <span class="section-head__eyebrow">04 · Experience</span>
+          <h2 class="section-head__title" id="exp-title">
+            Learning by shipping.
+          </h2>
+        </header>
+
+        <div class="experience__layout">
+
+        <ol class="timeline" aria-label="Academic and project timeline">
+
+          <li class="timeline__item" data-reveal>
+            <div class="timeline__marker" aria-hidden="true">
+              <img src="assets/images/timeline-dot.svg" alt="" width="20" height="20">
+            </div>
+            <div class="timeline__content">
+              <time class="timeline__date">2024 — Present</time>
+              <h3 class="timeline__title">Licence Informatique · UCAO Saint-Michel</h3>
+              <p class="timeline__desc">
+                Computer Science studies in Dakar — software engineering, database
+                design, networking, UML, and collaborative project work.
+              </p>
+              <ul class="timeline__tags">
+                <li class="tag">Computer Science</li>
+                <li class="tag">UML / Astah</li>
+                <li class="tag">Databases</li>
+                <li class="tag">Programming</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="timeline__item" data-reveal>
+            <div class="timeline__marker" aria-hidden="true">
+              <img src="assets/images/timeline-dot.svg" alt="" width="20" height="20">
+            </div>
+            <div class="timeline__content">
+              <time class="timeline__date">2025 — Present</time>
+              <h3 class="timeline__title">Économat Épiscopal · Collaborative development</h3>
+              <p class="timeline__desc">
+                Five-person Scrum team on a production-bound Laravel platform.
+                Personal responsibility: accounting, cash management, forecast budgeting.
+                Mémoire binôme (with Sidaty) on Patrimoine / GED / OCR axis.
+              </p>
+              <ul class="timeline__tags">
+                <li class="tag tag--accent">Laravel 12</li>
+                <li class="tag">MySQL</li>
+                <li class="tag tag--accent2">Scrum</li>
+                <li class="tag">Bitbucket</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="timeline__item" data-reveal>
+            <div class="timeline__marker" aria-hidden="true">
+              <img src="assets/images/timeline-dot.svg" alt="" width="20" height="20">
+            </div>
+            <div class="timeline__content">
+              <time class="timeline__date">2025</time>
+              <h3 class="timeline__title">MediStock · Mobile + IoT academic project</h3>
+              <p class="timeline__desc">
+                Integrated Flutter application with PostgreSQL backend and contributed
+                Arduino code for clinic environmental monitoring with team of 5.
+              </p>
+              <ul class="timeline__tags">
+                <li class="tag tag--accent">Flutter</li>
+                <li class="tag tag--accent2">Arduino</li>
+                <li class="tag">PostgreSQL</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="timeline__item" data-reveal>
+            <div class="timeline__marker" aria-hidden="true">
+              <img src="assets/images/timeline-dot.svg" alt="" width="20" height="20">
+            </div>
+            <div class="timeline__content">
+              <time class="timeline__date">Completed</time>
+              <h3 class="timeline__title">PitchSN / CourtSN · Full-stack platform</h3>
+              <p class="timeline__desc">
+                Reservation platform with authentication, booking conflict detection,
+                and security hardening for a real-world sports use-case in Dakar.
+              </p>
+              <ul class="timeline__tags">
+                <li class="tag tag--accent">PHP</li>
+                <li class="tag">MySQL</li>
+                <li class="tag tag--accent2">Security</li>
+              </ul>
+            </div>
+          </li>
+
+        </ol>
+
+          <!-- Mindset card: interview-style answers. Edit the text to make it yours. -->
+          <aside class="mindset-card" data-reveal aria-labelledby="mindset-title">
+            <span class="mindset-card__eyebrow">Mindset · Objectives</span>
+            <h3 class="mindset-card__title" id="mindset-title">The person behind the code</h3>
+            <dl class="mindset">
+              <div class="mindset__item">
+                <dt>Tell me about yourself</dt>
+                <dd>I'm Adama Diallo, a computer science student and aspiring software developer from
+                    Dakar, Senegal. For me, software is more than a technical discipline: it's a way
+                    to turn an idea into something practical that people can use.</dd>
+              </div>
+              <div class="mindset__item">
+                <dt>How do you approach your work?</dt>
+                <dd>I try to stay curious and disciplined, and to understand the real need behind a
+                    project before writing code. I want to know how things work, not just make them
+                    run, and keep improving instead of settling for a superficial result.</dd>
+              </div>
+              <div class="mindset__item">
+                <dt>What are your objectives?</dt>
+                <dd>I want to become a versatile, highly skilled software engineer with a portfolio of
+                    useful, reliable and well-designed applications. I'm looking for real experience
+                    through internships and collaboration, and I'd like to study and work abroad,
+                    with France, Spain and the United States as possible destinations.</dd>
+              </div>
+              <div class="mindset__item">
+                <dt>How do your projects help people?</dt>
+                <dd>I want them to address real needs: simplify tasks, improve access to services or
+                    information, and make daily life easier. To me, software is a tool for solving
+                    problems and creating value, not just code.</dd>
+              </div>
+              <div class="mindset__item">
+                <dt>What motivates you beyond coding?</dt>
+                <dd>Becoming independent, building a meaningful career, and being able to support
+                    the people I care about. I want to be someone others can rely on, and to keep
+                    growing as a person along the way.</dd>
+              </div>
+            </dl>
+          </aside>
+
+        </div><!-- /experience__layout -->
+      </div>
+    </section>
+
+    <!-- ============================================================
+      06 · CONTACT
+    ============================================================ -->
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="contact__wrap">
+
+          <!-- ── Left: editorial info ── -->
+          <div class="contact__left" data-reveal>
+            <span class="contact__eyebrow">05 · Contact</span>
+            <h2 class="contact__heading" id="contact-title">
+              Let's build<br>something useful.
+            </h2>
+
+            <ul class="contact__meta">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true" width="14" height="14"><path d="M4 6h16v12H4zM4 7l8 6 8-6"/></svg>
+                <a href="mailto:adamadiallosalam57@gmail.com">adamadiallosalam57@gmail.com</a>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="14" height="14"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                <a href="https://github.com/adxmadlo" target="_blank" rel="noopener noreferrer">github.com/adxmadlo</a>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true" width="14" height="14"><path d="M12 2a7 7 0 0 1 7 7c0 5.25-7 13-7 13S5 14.25 5 9a7 7 0 0 1 7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                <span>Based in Dakar, Senegal</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- ── Right: compact editorial form ── -->
+          <div class="contact__right" data-reveal>
+            <!--
+              Form uses mailto: fallback — opens native email client on submit.
+              No backend, no server, works 100% offline.
+            -->
+            <form class="contact-form" id="contactForm"
+                  action="mailto:adamadiallosalam57@gmail.com"
+                  method="post" enctype="text/plain" novalidate>
+
+              <div class="form-row">
+                <label class="form-label" for="cf-name">Name</label>
+                <input class="form-input" id="cf-name" name="name" type="text"
+                       autocomplete="name" required minlength="2"
+                       placeholder="Your name">
+                <span class="form-error" id="err-name" role="alert"></span>
+              </div>
+
+              <div class="form-row">
+                <label class="form-label" for="cf-email">Email</label>
+                <input class="form-input" id="cf-email" name="email" type="email"
+                       autocomplete="email" required
+                       placeholder="you@example.com">
+                <span class="form-error" id="err-email" role="alert"></span>
+              </div>
+
+              <div class="form-row">
+                <label class="form-label" for="cf-message">Message</label>
+                <textarea class="form-input form-textarea" id="cf-message" name="message"
+                          rows="3" required minlength="10"
+                          placeholder="Tell me about your project or idea…"></textarea>
+                <span class="form-error" id="err-message" role="alert"></span>
+              </div>
+
+              <button class="contact-form__btn" type="submit">
+                Send Message
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="2" stroke-linecap="round" aria-hidden="true" width="14" height="14">
+                  <path d="M4 4l16 8-16 8V4z"/>
+                </svg>
+              </button>
+
+              <p class="form-notice" id="form-status" role="status">
+                Opens your email app — no server required.
+              </p>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+    FOOTER
+  ============================================================ -->
+  <footer class="footer">
+    <div class="footer__inner container">
+      <p class="footer__text">
+        Built by <strong>Adama Diallo</strong> with pure HTML · CSS · JS
+        &nbsp;·&nbsp; © <span id="footerYear">2025</span>
+      </p>
+      <a class="footer__top" href="#hero" aria-label="Back to top">
+        Back to top
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" aria-hidden="true" width="16" height="16">
+          <path d="m6 14 6-6 6 6"/>
+        </svg>
+      </a>
+    </div>
+  </footer>
+
+  <!-- Floating back-to-top -->
+  <button class="back-top" id="backTop" type="button" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+         stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+      <path d="m6 14 6-6 6 6"/>
+    </svg>
+  </button>
+
+  <!-- Header scrolled shadow — tiny inline listener for perf -->
+  <script>
+    (function() {
+      var h = document.querySelector('.header');
+      if (!h) return;
+      window.addEventListener('scroll', function() {
+        h.classList.toggle('scrolled', window.scrollY > 20);
+      }, { passive: true });
+    })();
+  </script>
+
+  <!-- Main script — loaded last so HTML is fully parsed -->
+  <script src="js/main.js"></script>
+</body>
+</html>
